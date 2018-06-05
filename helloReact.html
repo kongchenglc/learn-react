@@ -20,6 +20,7 @@
         lastName: 'Cheng',
       }
 
+      //jsx语法
       const element = (
         <h1>
           hello, {formatName(user)}!
@@ -33,6 +34,7 @@
             <h2>It is {new Date().toLocaleTimeString()}.</h2>
           </div>
         );
+        //元素渲染
         ReactDOM.render(
           element,
           document.getElementById('root')
@@ -40,12 +42,6 @@
       }
 
       setInterval(tick, 1000);
-
-      ReactDOM.render(
-        element,
-        document.getElementById('root')
-      );
-
     </script>
   </body>
 </html>
