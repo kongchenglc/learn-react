@@ -11,6 +11,7 @@
     <div id="root"></div>
     <script type="text/babel">
 
+//hello react
       function formatName(user) {
         return user.firstName + ' ' + user.lastName;
       }
@@ -42,6 +43,32 @@
       }
 
       setInterval(tick, 1000);
+
+
+//使用State，渲染一次，自动更新
+      class Timer extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {date: new Date()}
+        }
+        
+        //钩子函数
+        componentDidMount() {
+          this.timerID = setInterval(()=>this.setState({date:new Date()}),1000)
+        }
+
+        componentWillUnmount() {
+          clearInterval(this.timerID)
+        }
+  
+        render() {
+          return (
+            <h1>
+              this.props.value:{this.state.date.toLocaleTimeString()}
+            </h1>
+          );
+        }
+      }
     </script>
   </body>
 </html>
